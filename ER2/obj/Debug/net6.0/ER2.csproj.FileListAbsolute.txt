@@ -1,0 +1,15 @@
+C:\Users\gucke\OneDrive\Área de Trabalho\SENAI\uc9\UC9_SA2\ER2\bin\Debug\net6.0\ER2.exe
+C:\Users\gucke\OneDrive\Área de Trabalho\SENAI\uc9\UC9_SA2\ER2\bin\Debug\net6.0\ER2.deps.json
+C:\Users\gucke\OneDrive\Área de Trabalho\SENAI\uc9\UC9_SA2\ER2\bin\Debug\net6.0\ER2.runtimeconfig.json
+C:\Users\gucke\OneDrive\Área de Trabalho\SENAI\uc9\UC9_SA2\ER2\bin\Debug\net6.0\ER2.dll
+C:\Users\gucke\OneDrive\Área de Trabalho\SENAI\uc9\UC9_SA2\ER2\bin\Debug\net6.0\ER2.pdb
+C:\Users\gucke\OneDrive\Área de Trabalho\SENAI\uc9\UC9_SA2\ER2\obj\Debug\net6.0\ER2.csproj.AssemblyReference.cache
+C:\Users\gucke\OneDrive\Área de Trabalho\SENAI\uc9\UC9_SA2\ER2\obj\Debug\net6.0\ER2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gucke\OneDrive\Área de Trabalho\SENAI\uc9\UC9_SA2\ER2\obj\Debug\net6.0\ER2.AssemblyInfoInputs.cache
+C:\Users\gucke\OneDrive\Área de Trabalho\SENAI\uc9\UC9_SA2\ER2\obj\Debug\net6.0\ER2.AssemblyInfo.cs
+C:\Users\gucke\OneDrive\Área de Trabalho\SENAI\uc9\UC9_SA2\ER2\obj\Debug\net6.0\ER2.csproj.CoreCompileInputs.cache
+C:\Users\gucke\OneDrive\Área de Trabalho\SENAI\uc9\UC9_SA2\ER2\obj\Debug\net6.0\ER2.dll
+C:\Users\gucke\OneDrive\Área de Trabalho\SENAI\uc9\UC9_SA2\ER2\obj\Debug\net6.0\refint\ER2.dll
+C:\Users\gucke\OneDrive\Área de Trabalho\SENAI\uc9\UC9_SA2\ER2\obj\Debug\net6.0\ER2.pdb
+C:\Users\gucke\OneDrive\Área de Trabalho\SENAI\uc9\UC9_SA2\ER2\obj\Debug\net6.0\ER2.genruntimeconfig.cache
+C:\Users\gucke\OneDrive\Área de Trabalho\SENAI\uc9\UC9_SA2\ER2\obj\Debug\net6.0\ref\ER2.dll
