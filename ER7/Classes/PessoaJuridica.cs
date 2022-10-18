@@ -49,20 +49,6 @@ namespace ER4.Classes
             }
             return false;    
         }
-
-        public bool ValidarDataNascJ(DateTime datanascpj)
-        {   
-            DateTime dataAtual = DateTime.Today;
-
-            double anos = (dataAtual - datanascpj).TotalDays / 365;
-
-            if (anos >= 18)
-            {
-                return true;
-            }
-            return false;
-            
-        }
     }
 }
 

@@ -8,7 +8,5 @@ namespace ER4.Interfaces
         /// <param name="cnpj">cnpj para validar</param>
         /// <returns>validacao do cnpj</returns>
         bool ValidarCnpj(string cnpj);
-
-        bool ValidarDataNascJ(DateTime datanascpj);
     }
 }
