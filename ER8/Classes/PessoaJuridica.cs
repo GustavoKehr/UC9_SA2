@@ -51,11 +51,11 @@ namespace ER4.Classes
             }
             return false;    
         }
-        public void Inserir(PessoaJuridica novaPJ)
+        public void Inserir(PessoaJuridica PJ)
         {
             Utils.VerificarPastaArquivo(Caminho);
 
-            string[] pjStrings = {$"{novaPJ.Nome}, {novaPJ.Cnpj}, {novaPJ.RazaoSocial}"};
+            string[] pjStrings = {$"{PJ.Nome}, {PJ.Cnpj}, {PJ.RazaoSocial}"};
 
             File.AppendAllLines(Caminho, pjStrings);
         }

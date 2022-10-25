@@ -20,11 +20,6 @@ Utils.BarraCarregamento("Sistema iniciando", 300, 6);
 Thread.Sleep(300);
 Console.Clear();
 
-//lista para armazenas as pf cadastradas
-List<PessoaFisica> LPF = new List<PessoaFisica>();
-
-List<PessoaJuridica> LPJ = new List<PessoaJuridica>();
-
 string opcao;
 
 do
@@ -67,12 +62,14 @@ Console.WriteLine(@$"
 
             PessoaFisica metodosPF = new PessoaFisica();
 
+            PessoaFisica newPF = new PessoaFisica();
+
             switch (opcaopf)
             
                 {
                     case "1":
                     
-                        PessoaFisica newPF = new PessoaFisica();
+                        
 
                         Endereco newEndereco = new Endereco();
                         
@@ -157,65 +154,37 @@ Console.WriteLine(@$"
                         
                         newPF.Endereco = newEndereco;
                         
-
-                        LPF.Add(newPF);
-
-                        // StreamWriter sw = new StreamWriter($"{newPF.Nome}.txt"); // ex: Gustavo.txt
-                        // sw.WriteLine(newPF.Nome); // ex: Gustavo
-                        // sw.Close();
-
-                        using(StreamWriter sw = new StreamWriter($"{newPF.Nome}.txt"))
-                        {
-                            sw.WriteLine(newPF.Nome, 
-                                        newPF.Endereco.Logradouro, newPF.Endereco.Bairro, newPF.Endereco.Numero, newPF.Endereco.Uf, newPF.Endereco.Cep, newPF.Endereco.Pais, newPF.Endereco.Comercial,
-                                        newPF.DataNascimento,
-                                        newPF.Rendimento,
-                                        metodosPF.PagarImposto(newPF.Rendimento));
-                                        Console.WriteLine($"Aperte ENTER para continuar");
-                                        Console.ReadLine();
-                        }
-                        Console.WriteLine($"Aperte ENTER para continuar");
-                        Console.ReadLine();
                         
+
+                        metodosPF.Inserir(newPF);
+        
                         Utils.BarraCarregamento("Cadastro realizado com sucesso", 800, 5);
+                        Console.Clear();
+                        Thread.Sleep(800);
+                        Console.ResetColor();
                         break;
 
                     case "2":
-
-                        using(StreamReader sr = new StreamReader("Howl.txt"))
-                        {
-                            string linha;
-
-                            while ((linha = sr.ReadLine()) != null)
-                            {   
-                                Console.Clear();
-                                Console.WriteLine($"{linha}");
-                            }
-                        }
-                        Console.WriteLine($"Aperte ENTER para continuar");
-                        Console.ReadLine();
                         
-                        if (LPF.Count > 0)
+                        List<PessoaFisica> listaaPF = metodosPF.LerArqPF();
+
+                        foreach (PessoaFisica cadaItem in listaaPF)
                         {
-                            foreach (PessoaFisica listaPF in LPF)
-                            {
-Console.WriteLine(@$"
-Nome: {listaPF.Nome}
-Endereco: {listaPF.Endereco.Logradouro}, {listaPF.Endereco.Bairro}, {listaPF.Endereco.Numero}, {listaPF.Endereco.Uf}, {listaPF.Endereco.Cep}, {listaPF.Endereco.Pais}. {listaPF.Endereco.Comercial}
-Data de nascimento: {listaPF.DataNascimento}
-Rendimento: {listaPF.Rendimento}
-Imposto á pagar: {metodosPF.PagarImposto(listaPF.Rendimento)}
-");
-                            }
+                            Console.WriteLine(@$"
+                            Nome Fantasia: {cadaItem.Nome}
+                            CNPJ: {cadaItem.Cpf}
+                            Razão Social: {cadaItem.DataNascimento}
+                            ");
                             Console.WriteLine($"Aperte ENTER para continuar");
-                            Console.ReadLine();
-                            Console.Clear();
+                            Console.ReadLine();                        
                         }
-                        else
-                        {
-                            Console.WriteLine($"Essa lista está vazia");
-                            Console.Clear();
-                        }
+                            if (listaaPF.Count == 0)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine($"Esta lista está vazia");
+                                Console.ResetColor();
+                                Thread.Sleep(3000);
+                            }
                         break;
                     case "0":
                         break;
@@ -333,11 +302,17 @@ Imposto á pagar: {metodosPF.PagarImposto(listaPF.Rendimento)}
                     }
                     newPJ.Endereco = newEnderecoPJ;
 
-                    LPJ.Add(newPJ);
-
                     metodosPJ.Inserir(newPJ);
 
-                    List<PessoaJuridica> listaaPJ = metodosPJ.LerArqPJ();
+                    Utils.BarraCarregamento("Cadastro realizado com sucesso", 800, 5);
+                    Console.Clear();
+                    Thread.Sleep(800);
+                    Console.ResetColor();
+                    break;
+
+                    case "2":
+
+                        List<PessoaJuridica> listaaPJ = metodosPJ.LerArqPJ();
 
                     foreach (PessoaJuridica cadaItem in listaaPJ)
                     {
@@ -349,31 +324,7 @@ Imposto á pagar: {metodosPF.PagarImposto(listaPF.Rendimento)}
                         Console.WriteLine($"Aperte ENTER para continuar");
                         Console.ReadLine();                        
                     }
-                    
-                    Utils.BarraCarregamento("Cadastro realizado com sucesso", 800, 5);
-                    Console.Clear();
-                    Thread.Sleep(800);
-                    Console.ResetColor();
-                    break;
-
-                    case "2":
-
-                        if (LPJ.Count > 0)
-                        {
-                            foreach (PessoaJuridica pj in LPJ)
-                            {
-Console.WriteLine(@$"
-Nome: {pj.Nome}
-Endereco: {pj.Endereco}
-Razao Social: {pj.RazaoSocial}
-Rendimento {pj.Rendimento}
-Imposto á pagar: {metodosPJ.PagarImposto(pj.Rendimento)}
-");
-                            }
-                            Console.WriteLine($"Aperte ENTER para continuar");
-                            Console.ReadLine();   
-                        }
-                        else
+                        if (listaaPJ.Count == 0)
                         {   
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine($"Esta lista está vazia");
