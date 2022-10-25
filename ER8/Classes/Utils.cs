@@ -24,7 +24,7 @@ namespace ER4.Classes
             {
                 Directory.CreateDirectory(pasta);
             }
-            
+
             if (!File.Exists(caminho))
             {
                 using(File.Create(caminho)){}

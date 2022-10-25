@@ -41,7 +41,7 @@ namespace ER4.Classes
                 return true;
             }
             return false;
-            
+
         }
 
             public bool ValidarDataNasc(string datanasc)
@@ -50,7 +50,7 @@ namespace ER4.Classes
 
                         //condicao de verificacao se a string pode ser convertida em DateTime, verificar se esta em um formato valido
                         //DateTime.TryParse tenta converter a data passada em string para DateTime e coloca na saida (out)
-                        
+
                         if (DateTime.TryParse(datanasc, out dataConvertida))
                         {
                             DateTime dataAtual = DateTime.Today;
