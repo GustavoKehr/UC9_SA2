@@ -5,8 +5,8 @@ namespace ER4.Classes
 {
     public class PessoaJuridica : Pessoa, IPessoaJuridica
     {
-        public string Cnpj { get; set; }
         public string RazaoSocial { get; set; }
+        public string Cnpj { get; set; }
         public static string Caminho { get; private set; } = "Database/PessoaJuridica.csv";
 
 
@@ -73,8 +73,8 @@ namespace ER4.Classes
                 PessoaJuridica cadaPJ = new PessoaJuridica();
 
                 cadaPJ.Nome = atributos[0];
-                cadaPJ.Cnpj = atributos[1];
-                cadaPJ.RazaoSocial = atributos[2];
+                cadaPJ.RazaoSocial = atributos[1];
+                cadaPJ.Cnpj = atributos[2];
 
                 listaPJ.Add(cadaPJ);
             }

@@ -90,7 +90,7 @@ Console.WriteLine(@$"
                         do
                         {
                         Console.WriteLine("Digite a data de nascimento do cadastrante DD/MM/AAAA: ");
-                        // newPF.DataNasc = new DateTime(2002, 10, 05);
+
                         string datanascimento = Console.ReadLine();
 
                         dataValida = metodosPF.ValidarDataNasc(datanascimento);
@@ -171,9 +171,9 @@ Console.WriteLine(@$"
                         foreach (PessoaFisica cadaItem in listaaPF)
                         {
                             Console.WriteLine(@$"
-                            Nome Fantasia: {cadaItem.Nome}
-                            CNPJ: {cadaItem.Cpf}
-                            Razão Social: {cadaItem.DataNascimento}
+                            Nome: {cadaItem.Nome}
+                            CPF: {cadaItem.Cpf}
+                            Data de Nascimento: {cadaItem.DataNascimento}
                             ");
                             Console.WriteLine($"Aperte ENTER para continuar");
                             Console.ReadLine();                        
@@ -237,36 +237,16 @@ Console.WriteLine(@$"
 
                     Console.WriteLine($"Ditite o nome que deseja cadastrar: ");
                     newPJ.Nome = Console.ReadLine();
-                    
-                    Console.WriteLine($"Digite o numero do cnpj: ");
-                    string numeroCnpj = Console.ReadLine();
-                    
-                    cnpjValido = metodosPJ.ValidarCnpj(numeroCnpj);
 
-                    if (Regex.IsMatch(numeroCnpj, @"(^(\d{2}.\d{3}.\d{3}/\d{4}-\d{2})|(\d{14})$)"))
-                    {
-                        if (numeroCnpj.Length == 18)
-                        {
-                            if (numeroCnpj.Substring(11, 4) == "0001")
-                            {
-                                Console.WriteLine($"CNPJ Válido, prossiga");
-                            }
-                        }
-                    else if (numeroCnpj.Length == 14)
-                    {
-                        if (numeroCnpj.Substring(8, 4) == "0001")
-                        {
-                            Console.WriteLine($"CNPJ Válido, prossiga");
-                        }
-                    } 
-                    else 
-                    {
-                    Console.WriteLine($"CNPJ Inválido, volte e digite novamente um cnpj corretamente e nas metricas corretas");
-                    }
-                    }
                     Console.WriteLine($"Digite sua Razão Social: ");
                     newPJ.RazaoSocial = Console.ReadLine();
-
+                    
+                    Console.WriteLine($"Digite o numero do cnpj: ");
+                    newPJ.Cnpj = Console.ReadLine();
+                    
+                    cnpjValido = metodosPJ.ValidarCnpj(newPJ.Cnpj);
+                    Console.WriteLine(cnpjValido);
+                    
                     Console.WriteLine($"Digite seu Rendimento mensal (Somente Numeros): ");
                     newPJ.Rendimento = float.Parse(Console.ReadLine());
 
@@ -318,8 +298,8 @@ Console.WriteLine(@$"
                     {
                         Console.WriteLine(@$"
                         Nome Fantasia: {cadaItem.Nome}
-                        CNPJ: {cadaItem.Cnpj}
-                        Razão Social: {cadaItem.RazaoSocial}
+                        CNPJ: {cadaItem.RazaoSocial}
+                        Razão Social: {cadaItem.Cnpj}
                         ");
                         Console.WriteLine($"Aperte ENTER para continuar");
                         Console.ReadLine();                        

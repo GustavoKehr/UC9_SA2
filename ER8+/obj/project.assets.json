@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gucke\\OneDrive\\Área de Trabalho\\SENAI\\uc9\\UC9_SA2\\ER8\\ERs.csproj",
+      "projectUniqueName": "C:\\Users\\gucke\\OneDrive\\Área de Trabalho\\SENAI\\uc9\\UC9_SA2\\ER8+\\ERs.csproj",
       "projectName": "ERs",
-      "projectPath": "C:\\Users\\gucke\\OneDrive\\Área de Trabalho\\SENAI\\uc9\\UC9_SA2\\ER8\\ERs.csproj",
+      "projectPath": "C:\\Users\\gucke\\OneDrive\\Área de Trabalho\\SENAI\\uc9\\UC9_SA2\\ER8+\\ERs.csproj",
       "packagesPath": "C:\\Users\\gucke\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gucke\\OneDrive\\Área de Trabalho\\SENAI\\uc9\\UC9_SA2\\ER8\\obj\\",
+      "outputPath": "C:\\Users\\gucke\\OneDrive\\Área de Trabalho\\SENAI\\uc9\\UC9_SA2\\ER8+\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gucke\\AppData\\Roaming\\NuGet\\NuGet.Config"
